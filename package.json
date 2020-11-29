@@ -1,0 +1,24 @@
+{
+  "name": "CursoCypress",
+  "version": "1.0.0",
+  "description": "Curso da Udemy para utilização do framework Cypress",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^6.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mortari7/CursoCypress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mortari7/CursoCypress/issues"
+  },
+  "homepage": "https://github.com/mortari7/CursoCypress#readme"
+}
