@@ -41,3 +41,21 @@ Cypress.Commands.add('api_createLabel', (project_id, label) =>{
             })
         })
 })
+
+Cypress.Commands.add('gorestApiRequest', () =>{
+    cy.request({
+        method: 'GET',
+        url: `https://gorest.co.in/public-api/users`,
+    })
+})
+
+Cypress.Commands.add('gorestInsert', data =>{
+
+})
+
+Cypress.Commands.add('gorestFind', data =>{
+    cy.request({
+        method: 'GET',
+        url: `https://gorest.co.in/public-api/users/?name=Nawal`
+    })   
+})
