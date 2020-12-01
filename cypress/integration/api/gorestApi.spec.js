@@ -10,6 +10,15 @@ describe('Test request gorest.api', () => {
         })
     })
 
+    it('call the GET request gorest api with parameters', () =>{
+        cy.request('https://gorest.co.in/public-api/users/?id=1320')
+            .then(response =>{
+                expect(response.status).to.equal(200)
+                expect(response.body.data[0]).has.property('name', "Rosaria Lima")
+                expect(response.body.data[0]).has.property('gender', "Female")
+            })       
+    })
+
     const dataInsert = {
         name: `Erika ${faker.random.words(4)}`,
         email: `'teste@uol.com.br'`,
@@ -21,7 +30,8 @@ describe('Test request gorest.api', () => {
         cy.gorestInsert(dataInsert)
         cy.gorestFind(dataInsert)
             .then(response=>{
-               expect(response.status).to.equal(200)     
+               expect(response.status).to.equal(200)  
+               //expect(response.body.data[0]).has.property('email', dataInsert.email)
         });
     })
 
