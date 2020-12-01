@@ -42,20 +42,32 @@ Cypress.Commands.add('api_createLabel', (project_id, label) =>{
         })
 })
 
+/* Testando gorest API
+   Confirmar como se passa o bearer token no Cypress*/
 Cypress.Commands.add('gorestApiRequest', () =>{
     cy.request({
         method: 'GET',
-        url: `https://gorest.co.in/public-api/users`,
+        url: `https://gorest.co.in/public-api/users?private_token=468c52832e956bf51a4ecd27034fcbf9fd2b0048204f2d70ad1b0586bc5f17cb`
     })
 })
 
 Cypress.Commands.add('gorestInsert', data =>{
-
+    cy.request({
+        method: 'POST',
+        url: `https://gorest.co.in/public-api/users?private_token=468c52832e956bf51a4ecd27034fcbf9fd2b0048204f2d70ad1b0586bc5f17cb`,
+        body:{
+            name: data.name,
+            email: data.email,
+            gender: data.gender,
+            status: data.status            
+        }
+    })
+    
 })
 
 Cypress.Commands.add('gorestFind', data =>{
     cy.request({
         method: 'GET',
-        url: `https://gorest.co.in/public-api/users/?name=Nawal`
+        url: `https://gorest.co.in/public-api/users/?name=${data.name}`,
     })   
 })
