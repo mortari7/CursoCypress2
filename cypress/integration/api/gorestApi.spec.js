@@ -2,6 +2,8 @@
 
 const faker = require('faker')
 
+Cypress.config('baseUrl', 'https://gorest.co.in')
+
 describe('Test request gorest.api', () => {
     it('call the request gorest api', ()=>{
         cy.gorestApiRequest()
@@ -11,10 +13,11 @@ describe('Test request gorest.api', () => {
     })
 
     it('call the GET request gorest api with parameters', () =>{
-        cy.request('https://gorest.co.in/public-api/users/?id=1320')
+        //cy.request('https://gorest.co.in/public-api/users/?id=1320')
+        cy.request('/public-api/users/?id=1320')
             .then(response =>{
                 expect(response.status).to.equal(200)
-                expect(response.body.data[0]).has.property('name', "Rosaria Lima")
+                expect(response.body.data[0]).has.property('name', "Sukanya Mehra")
                 expect(response.body.data[0]).has.property('gender', "Female")
                 //expect(response.body.data).has.length(7);
                 expect(response.body.data[0]).not.has.property('price')

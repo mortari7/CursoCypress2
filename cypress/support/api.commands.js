@@ -1,6 +1,7 @@
 /// <reference types ="Cypress" /> 
 
 const accessToken = Cypress.env('gitlab_access_token')
+Cypress.config('baseUrl', 'https://gorest.co.in')
 
 Cypress.Commands.add('api_createProject', project =>{
     cy.request({
@@ -47,14 +48,14 @@ Cypress.Commands.add('api_createLabel', (project_id, label) =>{
 Cypress.Commands.add('gorestApiRequest', () =>{
     cy.request({
         method: 'GET',
-        url: `https://gorest.co.in/public-api/users?private_token=468c52832e956bf51a4ecd27034fcbf9fd2b0048204f2d70ad1b0586bc5f17cb`
+        url: `/public-api/users?private_token=468c52832e956bf51a4ecd27034fcbf9fd2b0048204f2d70ad1b0586bc5f17cb`
     })
 })
 
 Cypress.Commands.add('gorestInsert', data =>{
     cy.request({
         method: 'POST',
-        url: `https://gorest.co.in/public-api/users?private_token=468c52832e956bf51a4ecd27034fcbf9fd2b0048204f2d70ad1b0586bc5f17cb`,
+        url: `/public-api/users?private_token=468c52832e956bf51a4ecd27034fcbf9fd2b0048204f2d70ad1b0586bc5f17cb`,
         body:{
             name: data.name,
             email: data.email,
@@ -68,6 +69,6 @@ Cypress.Commands.add('gorestInsert', data =>{
 Cypress.Commands.add('gorestFind', data =>{
     cy.request({
         method: 'GET',
-        url: `https://gorest.co.in/public-api/users/?name=${data.name}`,
+        url: `/public-api/users/?name=${data.name}`,
     })   
 })
