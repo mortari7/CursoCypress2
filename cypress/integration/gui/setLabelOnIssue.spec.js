@@ -32,5 +32,5 @@ describe('Set label on issue', () =>{
         cy.get('.qa-labels-block span')
             .should('have.attr', 'style', `background-color: ${label.color}; color: #333333;`)
 
-    })
+    });
 })
