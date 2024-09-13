@@ -2,7 +2,7 @@
 cypress.env.json
 cypress/screenshots/
 cypress/videos/
-node_modules.rar
 node_modules/
+node_modules.rar
 temp/
 workspaceCypress.code-workspace
