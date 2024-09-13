@@ -4,7 +4,7 @@
   "description": "Curso da Udemy para utilização do framework Cypress",
   "main": "index.js",
   "dependencies": {
-    "cypress": "^6.0.0"
+    "cypress": "^13.14.2"
   },
   "devDependencies": {
     "faker": "^5.1.0"
